@@ -1,8 +1,9 @@
 const express = require("express");
-const {
-    createMessage,
-    getMessages,
+const { 
+    createMessage, 
+    getMessages 
 } = require("../Controllers/messageController");
+
 
 const router = express. Router();
 

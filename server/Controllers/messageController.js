@@ -1,17 +1,17 @@
 const messageModel = require("../Models/messageModel");
 
-// createriessage
+// createMessage
 
 const createMessage = async (req, res) => {
     const { chatId, senderId, text } = req.body;
 
     const message = new messageModel ({
-        chatid,
-        senderld,
+        chatId,
+        senderId,
         text,
     });
     try {
-        const response = await message ,save();
+        const response = await message.save();
         res.status (200). json (response);
     } catch (error) {
         console. Log (error);
@@ -21,11 +21,11 @@ const createMessage = async (req, res) => {
 
 // getMessages
 
-const getMessages = osync (reg, res) => {
+const getMessages = async (reg, res) => {
     const { chatId } = req.params;
 
     try {
-        const messages = await messageModel.find({ chatId }) ;
+        const messages = await messageModel.find({ chatId });
         res.status (200).json(messages);
     } catch (error) {
         console.log (error);
